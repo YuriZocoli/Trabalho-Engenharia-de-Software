@@ -1,0 +1,34 @@
+<div class="runs"> 
+  <mat-tab-group mat-align-tabs="start" backgroundColor="primary"></mat-tab-group>
+    <mat-tab label="About">
+      <p *ngIf="game.parent_platforms?.length" class="game-tabs-par">
+        Platforms:
+        <span *ngFor="let game of game.parent_platforms; let last = last"
+          >{{ game.platform.name }}<span *ngIf="!last">, </span></span
+        >
+      </p>
+      <p *ngIf="game.publishers?.length" class="game-tabs-par">
+        Publishers:
+        <span *ngFor="let publisher of game.publishers; let last = last"
+          >{{ publisher.name }}<span *ngIf="!last">, </span></span
+        >
+      </p>
+      <p *ngIf="game.website" class="game-tabs-par">
+        Website:
+        <a class="game-tabs-link" href="{{ game.website }}" target="_blank">{{
+          game.website
+        }}</a>
+      </p>
+      <div class="game-description" [innerHTML]="game.description"></div>
+    </mat-tab>
+    <mat-tab label="Screenshots" *ngIf="game.screenshots?.length">
+      <ng-container *ngFor="let run of runs">
+        <div class="run" (click)="openRunDetails(run.id)">
+          <div class="run-description">
+            <p class="run-name">{{ run.name }}</p>
+            <p class="run-time">{{ run.time }}</p>
+          </div>
+        </div>
+      </ng-container> 
+  </mat-tab>
+</div>
