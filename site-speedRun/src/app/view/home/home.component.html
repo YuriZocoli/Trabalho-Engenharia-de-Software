@@ -1,6 +1,6 @@
 <div class="games">  
-  <ng-container *ngFor="let game of games">
-    <div class="game" (click)="openGameDetails(game.id)">
+  <ng-container *ngFor="let game of games.list">
+    <div class="game" (click)="openGameDetails(game.id_jogo)">
       <div class="game-thumb-container">
         <img
           *ngIf="game.background_image"
@@ -11,7 +11,7 @@
         <p *ngIf="!game.background_image">No image</p>
       </div>
       <div class="game-description">
-        <p class="game-name">{{ game.name }}</p>
+        <p class="game-name">{{ game.nome }}</p>
       </div>
     </div>
   </ng-container> 

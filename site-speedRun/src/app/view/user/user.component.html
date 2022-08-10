@@ -1,0 +1,44 @@
+<div class="details">
+    <div class="game-banner">
+      <img
+        class="game-banner-img"
+        src="{{ background_image }}"
+        alt="background image"
+      />
+    </div>
+    <div class="game-content">
+      <div class="details-wrapper">
+        <div class="game-header">
+          <h1 class="game-header-title">{{ user?.nome }}</h1>
+          </div>
+        </div>
+            <div class="user-tabs">
+                <mat-tab-group mat-align-tabs="start" backgroundColor="primary">
+                    <mat-tab label="About">
+                        <p class="user-tabs-par">
+                            Nome:
+                            <span>{{ user?.nome }}</span>
+                        </p>
+                        <p class="user-tabs-par">
+                            Apelido:
+                            <span>{{ user?.apelido }}</span>
+                        </p>
+                        <p class="user-tabs-par">
+                            E-mail:
+                            <span>{{ user?.email }}</span>
+                        </p>
+                        <p *ngIf="isAusente()" class="user-tabs-par">
+                            Ultima vez Online:
+                            <span>{{ user?.state.lastTime }}</span>
+                        </p>
+                        <p *ngIf="!isAusente()" class="user-tabs-par">
+                            Online
+                        </p>
+                    </mat-tab>
+                    <mat-tab label="Runs">
+                        <p class="user-runs">
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>

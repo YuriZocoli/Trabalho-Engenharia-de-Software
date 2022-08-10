@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GameComponent } from './controler/game.component';
 import { HomeComponent } from './controler/home.component';
+import { UserComponent } from './controler/user.component';
 
 const routes: Routes = [
   {
@@ -10,6 +12,14 @@ const routes: Routes = [
   {
     path: 'search/:game-search',
     component: HomeComponent
+  },
+  {
+    path: "user/:user-id",
+    component: UserComponent
+  },
+  {
+    path: "details/:game-id",
+    component: GameComponent
   }
 ];
 

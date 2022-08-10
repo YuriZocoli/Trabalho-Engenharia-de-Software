@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
 })
 export class SearchBarComponent implements OnInit {
 
+  user: any ={
+    name: "Matheus",
+    id: 1
+  };
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -18,5 +23,8 @@ export class SearchBarComponent implements OnInit {
     this.router.navigate(['search',form.value.search]);
   }
 
+  openUserDatails(){
+    this.router.navigate(['user', this.user.id]);
+  }
 
 }
