@@ -1,0 +1,12 @@
+<div class="search-container">
+    <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <span class="logo" routerLink="/">Eng. Software SpeedRuns</span>
+        <input
+            class="search-input"
+            name="search"
+            ngModel
+            placeholder="Pesquisar"
+        />
+        <button class="search-button">Pesquisar</button>
+    </form>
+</div>
